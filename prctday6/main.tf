@@ -85,7 +85,5 @@ resource "aws_instance" "name" {
     instance_type = "t2.micro"
     subnet_id = aws_subnet.name.id
     vpc_security_group_ids = [ aws_security_group.allow_tls.id]
-  tags = {
-    Name = "tst1"
-  }
+     
 }
