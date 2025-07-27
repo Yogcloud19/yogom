@@ -4,12 +4,6 @@ resource "aws_vpc" "name" {
   
 }
 
-# resource "aws_subnet" "name" {
-#     vpc_id = aws_vpc.name.id
-#     cidr_block = var.subnet_cidr  
-#     availability_zone = var.az
-# }
-
 
 resource "aws_subnet" "subnet_a" {
   vpc_id            = aws_vpc.name.id
@@ -29,9 +23,7 @@ output "vpc_id" {
   value = aws_vpc.name.id
 }
 
-# output "subnet_id" {
-#   value = aws_subnet.name.id
-# }
+ 
 
 
 output "subnet_ids" {
