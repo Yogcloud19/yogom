@@ -1,0 +1,1 @@
+bucket = "yogom-bucket"
