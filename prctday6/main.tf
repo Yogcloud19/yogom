@@ -81,7 +81,7 @@ egress {
 #ec2 creation 
 
 resource "aws_instance" "name" {
-    ami = "ami-05ffe3c48a9991133"
+    ami = "ami-0d0ad8bb301edb745"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.name.id
     vpc_security_group_ids = [ aws_security_group.allow_tls.id]
