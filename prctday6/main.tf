@@ -87,7 +87,7 @@ resource "aws_instance" "name" {
     vpc_security_group_ids = [ aws_security_group.allow_tls.id]
 
     tags = {
-        Name = "prct00001"
+        Name = "prct100"
     }
      
 }
