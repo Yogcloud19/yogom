@@ -9,7 +9,7 @@ resource "aws_vpc" "name" {
 resource "aws_subnet" "name" {
     vpc_id = aws_vpc.name.id
     cidr_block = "10.0.0.0/24"
-    availability_zone = "us-east-1a"
+    availability_zone = "ap-south-1a"
     tags = {
       Name = "test-subnet"
     }
@@ -81,9 +81,13 @@ egress {
 #ec2 creation 
 
 resource "aws_instance" "name" {
-    ami = "ami-05ffe3c48a9991133"
+    ami = "ami-0d0ad8bb301edb745"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.name.id
     vpc_security_group_ids = [ aws_security_group.allow_tls.id]
+
+    tags = {
+        Name = "test-instance"
+    }
      
 }
