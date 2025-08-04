@@ -22,11 +22,17 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.7.5
+       
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./prctday6  # Set your terraform folder path
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: ./prctday6
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve
+        working-directory: ./prctday6
